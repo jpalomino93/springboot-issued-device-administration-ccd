@@ -1,0 +1,14 @@
+### Health check
+GET http://localhost:8080/api/users/health
+
+### Obtener todos los usuarios
+GET http://localhost:8080/api/users
+
+### Crear usuario
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Jose Miguel",
+  "email": "jmiguel@example.com"
+}
