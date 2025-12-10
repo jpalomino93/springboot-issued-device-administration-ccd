@@ -189,3 +189,63 @@ GitHub: https://github.com/jpalomino93
 2. Click en **“Use this template”**.
 3. Crear un nuevo repositorio basado en él.
 4. ¡Listo! Un microservicio Spring Boot listo para usar.
+
+
+Esto es el backend (El FeignClient)
+
+curl --location 'https://dvi758vyde.execute-api.us-east-1.amazonaws.com/v1/system-auth/authentication-role/' \
+--header 'x-financial-id: Interbak' \
+--header 'x-end-user-terminal: consumer' \
+--header 'x-request-id: 9f46f462-0cce-4949-ae6a-cc6610cff3b2' \
+--header 'x-end-user-login: aplbipdev' \
+--header 'x-end-user-request-date-time: 2025-12-10T05:57:07.609Z' \
+--header 'x-channel: 1' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'x-api-key: k1MXI2JO3r6HRNQJFGBQKaZjymAFvReU3LW7ZqjT' \
+--data '{
+"authentication": {
+"login": "aplbipdev",
+"password": "C0b1s2050*#"
+},
+"subsidiary": {
+"code": 1
+},
+"branch": {
+"code": 1
+},
+"role": {
+"code": 3
+}
+}'
+
+
+
+y esto sera mi apirest expuesta (se mapeare body y headers hacia el feigt client)
+
+curl --location 'https://apic-gw-com.apps.ocpsbx.integracion.grupoib.local/ibk-dev/int-com-dev/issued-device-administration/v1/access-token-oauth2/create' \
+--header 'x-api-key: mIEuAR4Z2l6jjJGuoxWNU13nuq7htpFU5J4Y5BlJ' \
+--header 'x-financial-id: test' \
+--header 'serviceId: LPC' \
+--header 'consumerId: LPC' \
+--header 'messageId: 8a0fac44-8d9f-48d6-824c-6b99fd51c8f3' \
+--header 'timeStamp: 2022-11-11T09:57:00Z' \
+--header 'netId: LP' \
+--header 'userId: aplbipdev' \
+--header 'supervisorId: X10438' \
+--header 'deviceId: 10.11.37.72' \
+--header 'branchId: 100' \
+--header 'traceId: T-cc61a67e-c8a1-4706-93ba-d2a82ee3dfa8' \
+--header 'parentId: P-4b03263a-cedb-4a2a-84b8-2fe1b58a7671' \
+--header 'ipOrigen: 69.206.200.110' \
+--header 'funcionalidadId: F225' \
+--header 'Ocp-Apim-Subscription-Key: eda1fd8ecf105d8ca63065017192b5eb' \
+--header 'Ocp-Apim-Subscription-Secret: 649dee1ecd376681d4dcdaa7beda3cf5' \
+--header 'Content-Type: application/json' \
+--data '{
+"employeeIdentification": "aplbipdev1",
+"employeePassword": "C0b1s2050*#",
+"subsidiaryCode": 1,
+"branchCode": 1,
+"roleCode": 1
+}'

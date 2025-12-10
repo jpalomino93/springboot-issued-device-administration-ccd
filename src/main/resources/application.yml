@@ -1,16 +1,11 @@
 server:
   port: 8080
 
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/demo_db
-    username: demo
-    password: demo
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
+cobis:
+  url: "https://dvi758vyde.execute-api.us-east-1.amazonaws.com/v1"
+  channel : "channelCcd"
+  terminal : "consumer"
+  api-key : "${COBIS_API_KEY}" # variable de entorno , NUNCA quemada en código
+  timeout:
+    connect: 5000
+    read: 10000
