@@ -5,13 +5,10 @@ import feign.Response;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import pe.interbank.ccd.issued.device.admin.client.cobis.TokenCobisClient;
 import pe.interbank.ccd.issued.device.admin.client.cobis.model.TokenCobisRequest;
 import pe.interbank.ccd.issued.device.admin.dto.request.TokenRequest;
 import pe.interbank.ccd.issued.device.admin.dto.response.TokenResponse;
-import pe.interbank.ccd.issued.device.admin.exception.BusinessException;
 import pe.interbank.ccd.issued.device.admin.exception.TechnicalException;
 import pe.interbank.ccd.issued.device.admin.mapper.TokenMapper;
 
@@ -63,9 +60,9 @@ public class TokenServiceImpl implements TokenService {
                     "Error invoking COBIS: " + ex.getMessage());
         }
 
-        log.info("COBIS response status: {}", response.status());
+        log.info("COBIS response status : {}", response.status());
 
-        if(response.status() == 200){
+        if(response.status() == 201){
             String token = readHeader(response, "x-amzn-Remapped-Authorization");
             String expiration = readHeader(response, "Date");
             return new TokenResponse(token, expiration);

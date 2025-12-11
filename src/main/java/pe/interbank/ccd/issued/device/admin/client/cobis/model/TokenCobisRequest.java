@@ -27,7 +27,7 @@ public class TokenCobisRequest implements Serializable {
     @AllArgsConstructor
     public static class Authentication implements  Serializable{
         private static final long serialVersionUID = 1L;
-        private String username;
+        private String login;
         private String password;
     }
 

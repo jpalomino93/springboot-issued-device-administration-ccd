@@ -12,13 +12,14 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.0/mapstruct-processor-1.6.0.jar" />
         </processorPath>
-        <module name="springboot-issued-device-administration-ccd" />
         <module name="springboot-template-mvc" />
+        <module name="springboot-issued-device-administration" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-issued-device-administration" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="springboot-issued-device-administration-ccd" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="springboot-template-mvc" options="-parameters -Amapstruct.defaultComponentModel=spring" />
       <module name="springboot-template-mvc-full" options="-parameters" />

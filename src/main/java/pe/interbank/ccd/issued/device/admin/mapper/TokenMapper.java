@@ -13,7 +13,7 @@ import pe.interbank.ccd.issued.device.admin.dto.request.TokenRequest;
 )
 public interface TokenMapper {
 
-    @Mapping(source = "employeeIdentification", target = "authentication.username")
+    @Mapping(source = "employeeIdentification", target = "authentication.login")
     @Mapping(source = "employeePassword", target = "authentication.password")
     @Mapping(source = "subsidiaryCode", target = "subsidiary.code")
     @Mapping(source = "branchCode", target = "branch.code")
