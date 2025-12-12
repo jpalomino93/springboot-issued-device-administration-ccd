@@ -20,7 +20,7 @@ cobis:
   url: "https://uat.example.com/v1"
   channel: "channelCcd"
   terminal: "consumer"
-  api-key: "${COBIS_API_KEY}"
+  api-key: "${ccd-secret-apigw-cobis-authentication-x-api-key}"
   timeout:
     connect: 8000
     read: 15000
