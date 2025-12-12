@@ -3,6 +3,16 @@ spring:
     activate:
       on-profile: dev
 
+  cloud:
+    azure:
+      keyvault:
+        secret:
+          property-sources:
+            - name: key-vault
+              enabled: true
+              endpoint: https://tecylab-key-jp.vault.azure.net/
+
+
 logging:
   level:
     feign: DEBUG
@@ -10,12 +20,14 @@ logging:
     feign.Logger: DEBUG
     org.springframework.cloud.openfeign: DEBUG
     pe.interbank.ccd.issued.device.admin.client.cobis: DEBUG
+    com.azure: DEBUG
+    com.azure.identity: TRACE
 
 cobis:
   url: "https://dvi758vyde.execute-api.us-east-1.amazonaws.com/v1"
   channel: "channelCcd"
   terminal: "consumer"
-  api-key: "${COBIS_API_KEY}"
+  api-key: "${ccd-secret-apigw-cobis-authentication-x-api-key}"
   timeout:
     connect: 5000
     read: 10000

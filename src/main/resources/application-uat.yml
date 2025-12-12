@@ -3,6 +3,15 @@ spring:
     activate:
       on-profile: uat
 
+  cloud:
+    azure:
+      keyvault:
+        secret:
+          property-sources:
+            - name: key-vault
+              enabled: true
+              endpoint: https://tecylab-key-jp.vault.azure.net/
+
 logging:
   level:
     feign: INFO

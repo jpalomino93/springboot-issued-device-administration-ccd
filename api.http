@@ -1,14 +1,35 @@
-### Health check
-GET http://localhost:8080/api/users/health
-
-### Obtener todos los usuarios
-GET http://localhost:8080/api/users
-
-### Crear usuario
-POST http://localhost:8080/api/users
+###
+@xFinancialId = test
+@serviceid = LPC
+@consumerid = LPC
+@messageid = 8a0fac44-8d9f-48d6-824c-6b99fd51c8f3
+@timestamp = 2022-11-11T09:57:00Z
+@netid = LP
+@userid = aplbipdev
+@supervisorid = X10438
+@deviceid = 10.11.37.72
+@traceid = T-cc61a67e-c8a1-4706-93ba-d2a82ee3dfa8
+@iporigen = 69.206.200.110
+@funcionalidadid = F225
+POST {{cobis_base_url}}/issued-device-administration/v1/access-token-oauth2/create
 Content-Type: application/json
+x-financial-id: {{xFinancialId}}
+serviceId: {{serviceid}}
+consumerId: {{consumerid}}
+messageId: {{messageid}}
+timeStamp: {{timestamp}}
+netId: {{netid}}
+userId: {{userid}}
+supervisorId: {{supervisorid}}
+deviceId: {{deviceid}}
+traceId: {{traceid}}
+ipOrigen: {{iporigen}}
+funcionalidadId: {{funcionalidadid}}
 
 {
-  "name": "Jose Miguel",
-  "email": "jmiguel@example.com"
+  "employeeIdentification": "aplbipdev",
+  "employeePassword": "C0b1s2050*#",
+  "subsidiaryCode": 1,
+  "branchCode": 1,
+  "roleCode": 1
 }
