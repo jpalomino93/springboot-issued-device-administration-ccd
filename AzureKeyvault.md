@@ -36,9 +36,9 @@ C:\Users\jpalo>az ad sp create-for-rbac --name "cli-azure-sp" --role "Key Vault 
 Creating 'Key Vault Secrets User' role assignment under scope '/subscriptions/da1688b9-b43c-4f19-a208-cca0c9428ff3/resourceGroups/TecyLabGroup/providers/Microsoft.KeyVault/vaults/tecylab-key-jp'
 The output includes credentials that you must protect. Be sure that you do not include these credentials in your code or check the credentials into your source control. For more information, see https://aka.ms/azadsp-cli
 {
-  "appId": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+  "appId": "a6a31aab-4216-48ab-af35-392effb555e5",
   "displayName": "cli-azure-sp",
-  "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "password": "HaT8Q~fmUi4NCtN-Skh_HlFdq3_TGyKVNrP~ZaWc",
   "tenant": "73e2ab4a-8bce-4758-a5f0-b9c0cacc98fd"
 }
 ```
